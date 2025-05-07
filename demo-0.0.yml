@@ -1,0 +1,30 @@
+openapi: 3.0.1
+info:
+  title: demo
+  version: "0.0"
+paths:
+  /hello:
+    get:
+      operationId: hello
+      responses:
+        "200":
+          description: hello 200 response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HelloClass"
+components:
+  schemas:
+    HelloClass:
+      required:
+      - notNullProperty
+      - plainProperty
+      type: object
+      properties:
+        notNullProperty:
+          type: string
+        nullableProperty:
+          type: string
+          nullable: true
+        plainProperty:
+          type: string
